@@ -1,0 +1,135 @@
+body {
+    padding: 50px;
+    background-color: #222;
+    font-family: 'IBM Plex Sans', sans-serif;;
+    color: #ffb400;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 3.2rem;
+}
+
+.spanish {
+    border-bottom: 1px dashed;
+    padding-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.english {
+    font-size: 1rem;
+}
+
+.small {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    color:#cc9000;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.1rem;
+}
+
+#plot {
+    width: 100%;
+    min-height: 500px;
+    height: 90vh;
+    margin-bottom:50px;
+}
+
+.choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    color:#cc9000;
+    background-color:#222;
+    border: 1px solid;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0.2rem;
+    font-size: 0.9rem;
+}
+
+.btn:hover, .btn:focus {
+    background-color:#eac468;
+    color: #000;
+}
+
+.active {
+    background-color: #ffb400 !important;
+    color: #000 !important;
+}
+
+footer {
+    display: flex;
+    /* font-size: 0.8rem;
+    font-weight: bold;
+    color:#cc9000; */
+}
+
+footer a {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.informacion {
+    color: white;
+    z-index: 2000;
+    font-size: 0.2rem;
+    text-transform: capitalize;
+    background-color: rgba(32, 32, 32, 0.9);
+    padding: 0.5rem 0.5rem;
+    position: absolute;
+    border: 1px solid #424242;
+}
+
+.informacion p {
+    text-align: left;
+    margin: 0;
+    line-height: 1.8rem;
+}
+
+#censo {
+    font-weight: bold;
+}
+
+#pais, #consulado {
+    color: white;
+}
+
+#consulado {
+    font-weight: bold;
+}
+
+circle:hover{
+    cursor: pointer;
+}
+
+.actived {
+    fill: white !important;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: underline;
+    color: #ffb400;
+}
+
+a:hover, a:focus {
+    color: white;
+}

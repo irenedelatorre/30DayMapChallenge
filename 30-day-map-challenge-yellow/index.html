@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>30 Day Map Challenge: Yellow - Spaniards living abroad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700&display=swap" rel="stylesheet"> 
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <header class="container">
+        <div class="row justify-content-center">
+            <h1 class="col-md-12">Españoles Ausentes</h1>
+            <p class="col-md-5 col-sm-12 spanish">Visualización de los españoles registrados en el <a href="https://www.ine.es/ss/Satellite?c=Page&cid=1254735793323&pagename=CensoElectoral%2FINELayout&L=0">CERA</a> (Censo Electoral de los Residentes Ausentes)</p>
+            <h2 class="col-md-12">Spaniards living abroad</h2>
+            <p class="col-md-6 col-sm-12 english">A visual display of all Spanish registered in the <a href="https://www.ine.es/ss/Satellite?c=Page&cid=1254735793323&pagename=CensoElectoral%2FINELayout&L=0">CERA</a> database (census of all absent resident voters that are living outside Spain)</p>
+            <div class="col-md-12 choices">
+                <p class="btn btn-default active" id="consulates">Consulados / Consulates</p>
+                <p class="btn btn-default" id="country">Países / Countries</p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class='informacion hidden'>
+                <p id="pais"></p>
+                <p id="consulado"></p>
+                <p><span id="censo"></span> españoles</p>
+            </div>
+            <div id='plot' class="col-md-12"></div>
+        </div>
+    </div>
+    <footer>
+        <a class='col-md-6 col-sm-12'>#30DayMapChallenge: Yellow</a>
+        <a class='author col-md-6 col-sm-12' href="https://irenedelatorrearenas.wordpress.com">Irene de la Torre Arenas</a>
+    </footer>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://unpkg.com/d3-force-cluster@latest"></script>
+<script src="script/script.js"></script>
+</body>
+</html>
