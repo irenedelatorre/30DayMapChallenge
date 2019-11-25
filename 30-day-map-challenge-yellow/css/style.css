@@ -45,6 +45,24 @@ p {
     margin-bottom:50px;
 }
 
+@media (max-width: 600px) {
+    #plot {
+        /* width: 100%; */
+        min-height: auto;
+        height: 300px;
+        /* margin-bottom:50px; */
+    }
+}
+
+@media (max-width: 768px) {
+    #plot {
+        /* width: 100%; */
+        min-height: auto;
+        height: 500px;
+        /* margin-bottom:50px; */
+    }
+}
+
 .choices {
     display: flex;
     align-items: center;
@@ -72,7 +90,7 @@ p {
 }
 
 footer {
-    display: flex;
+    /* display: flex; */
     /* font-size: 0.8rem;
     font-weight: bold;
     color:#cc9000; */
@@ -81,8 +99,13 @@ footer {
 footer a {
     font-size: 0.8rem;
     font-weight: bold;
-    text-align: center;
 }
+
+@media (max-width: 600px) {
+    footer a, footer p {
+        width: 100%;
+    }
+  }
 
 .informacion {
     color: white;

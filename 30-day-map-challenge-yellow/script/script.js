@@ -1,4 +1,4 @@
-const maxSize = 20;
+let maxSize = 20;
 const paddingBox = 10;
 const formatNumber = d3.format(',.2r');
 const yellow = '#ffb400';
@@ -12,6 +12,18 @@ const margin = {t: paddingBox,
 
 let width = document.getElementById('plot').clientWidth - margin.r - margin.l;
 let height = document.getElementById('plot').clientHeight - margin.t - margin.b;
+const scaleScale = d3.scaleLinear().domain([600, 760, 980]).range([60, 150, 150])
+let scale = 150;
+checkScale();
+
+function checkScale() {
+    scale = scaleScale(width);
+    if (width <= 600) {
+        // scale = 60;
+        maxSize = 10;
+    }
+}
+
 
 // Append svg to div
 const plot = d3.select('#plot') 
@@ -32,7 +44,7 @@ const plotGroupBubbles = plot
 
 //projection
 const projection = d3.geoBaker()
-    .scale(150)
+    .scale(scale)
     .translate([(width/2),(height/2)]);
 
 // function to draw the map
@@ -107,6 +119,8 @@ Promise.all([
         width = document.getElementById('plot').clientWidth - margin.r - margin.l;
         height = document.getElementById('plot').clientHeight - margin.t - margin.b;
 
+        checkScale();
+
         d3.select('#plot') 
             .select('svg')
             .attr('width', width + margin.r + margin.l)
@@ -116,7 +130,9 @@ Promise.all([
             .select('path')
             .attr('d', path);
 
-        projection.translate([(width/2),(height/2)]);
+        projection
+            .scale(scale)
+            .translate([(width/2),(height/2)]);
 
         path.projection(projection);
 
