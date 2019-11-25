@@ -12,7 +12,7 @@ const margin = {t: paddingBox,
 
 let width = document.getElementById('plot').clientWidth - margin.r - margin.l;
 let height = document.getElementById('plot').clientHeight - margin.t - margin.b;
-const scaleScale = d3.scaleLinear().domain([600, 760, 980]).range([60, 150, 150])
+const scaleScale = d3.scaleLinear().domain([320, 600, 760, 980]).range([40, 60, 150, 150]).clamp(true);
 let scale = 150;
 checkScale();
 
@@ -24,6 +24,7 @@ function checkScale() {
     }
 }
 
+console.log(scale);
 
 // Append svg to div
 const plot = d3.select('#plot') 
