@@ -1,0 +1,175 @@
+body {
+    background-color: #dbefff;
+    font-family: adobe-caslon-pro, 'IBM Plex Serif', serif;
+    color: #4e6394;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    overflow: auto;
+}
+
+#plot {
+    width: 100%;
+    height: 100vh;
+    margin-bottom:50px;
+}
+
+#plot canvas {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#movements {
+    mix-blend-mode: multiply;
+}
+
+h1 {
+    text-align: center;
+    font-size: 7rem;
+    font-weight: 700;
+    font-style: normal;
+    /* text-shadow: 0 0 3px #135f9a; */
+    color: #4e6394;
+    line-height: 0.6em;
+    z-index: -1;
+}
+
+.title {
+    position: absolute;
+    z-index: 1;
+    bottom: 7%;
+    margin-left: 30px;
+}
+
+.you {
+    color: #F95700;
+}
+
+.i {
+    color: #00A4CC;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+p {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: adobe-caslon-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.land {
+    fill: white;
+}
+
+.dot {
+    opacity: 75%;
+    mix-blend-mode: hard-light;
+}
+
+.line {
+    stroke-width: 1;
+}
+
+.line-you, .line-me {
+    mix-blend-mode: multiply;
+}
+
+/* button */
+
+#replay {
+    /* color: #4e6394; */
+    font-size: 1.2em;
+    font-weight: normal;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.date {
+    margin-bottom: 10px;
+    border-bottom: 0.5px dashed 
+    #747474;
+}
+
+.animationBTN {
+    text-align: center;
+}
+
+#pause, #stop {
+    /* color: #222; */
+    font-size: 1.2em;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.choices {
+    display: flex;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30p
+}
+
+.choices div {
+    padding-right: 15px;
+    /* padding-left: 15px; */
+}
+
+#replay:hover,
+#replay:focus,
+#pause:hover,
+#pause:focus, 
+#stop:focus, 
+#stop:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
+.inactive {
+    color: #89624e !important;
+    cursor: auto !important;
+    text-decoration: none !important;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding-left: 45px;
+    background-color:#4e6394;
+    width: 100%;
+    font-size: 0.9em;
+    padding-top: 0.2em;
+    line-height: 2em;
+    mix-blend-mode: multiply;
+    color: white;
+    display: flex;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+}
+
+footer a:hover, footer a:focus {
+    text-decoration: underline;
+    color:white;
+}
+
+footer p {
+    margin: 0;
+    text-align: left;
+    font-size: 1em;
+}
