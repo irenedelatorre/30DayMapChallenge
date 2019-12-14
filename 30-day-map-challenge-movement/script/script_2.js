@@ -95,8 +95,8 @@ let path = d3.geoPath()
 
 // function to draw the lines
 let line = d3.line()
-    .x(d => projection([d.longitudeE7 / 1e7, d.latitudeE7  / 1e7])[0])
-    .y(d => projection([d.longitudeE7 / 1e7, d.latitudeE7  / 1e7])[1])
+    .x(d => projection([d.longitudeE7, d.latitudeE7 ])[0])
+    .y(d => projection([d.longitudeE7, d.latitudeE7 ])[1])
     .curve(d3.curveCatmullRom.alpha(0.5));
 
 const requestAnimationFrame = window.requestAnimationFrame ||
@@ -117,14 +117,14 @@ window.cancelRequestAnimFrame = ( function() {
 // load data
 Promise.all([
     d3.json('data/world-110m.json'), // from https://bl.ocks.org/mbostock/raw/4090846/world-110m.json
-    d3.json('data/her-location-history.json'),
-    d3.json('data/him-location-history.json'),
+    d3.json('data/her_new_location.json'),
+    d3.json('data/him_new_location.json'),
 ])
   .then(function (files) {
     const startDate = new Date('1 May 2018');
     const endDate = new Date('9 Dec 2019');
     const world = files[0];
-    const her = files[1].locations.filter(d => new Date(+d.timestampMs) >= startDate && new Date(+d.timestampMs) <= endDate);
+    const her = files[1].filter(d => new Date(+d.timestampMs) >= startDate && new Date(+d.timestampMs) <= endDate);
     const him = files[2].filter(d => new Date(+d.timestampMs) >= startDate && new Date(+d.timestampMs) <= endDate);
 
     const start = d3.min(her, d => +d.timestampMs);
@@ -164,8 +164,8 @@ Promise.all([
     const frame = 1000 * 60 * 60 * 8;
     let time = start;
     const size = 8;
-    let meStartPoint = [her[0].longitudeE7 / 1e7, her[0].latitudeE7  / 1e7];
-    let youStartPoint = [him[0].longitudeE7 / 1e7, him[0].latitudeE7  / 1e7];
+    let meStartPoint = [her[0].longitudeE7, her[0].latitudeE7 ];
+    let youStartPoint = [him[0].longitudeE7, him[0].latitudeE7 ];
 
     const meRandomX = Math.random() * 5;
     const meRandomY = Math.random() * 5;
@@ -243,14 +243,14 @@ Promise.all([
         youPos = projection(youInPos);
 
         if (meDrawing.length > 0 ){
-            mePos = projection([meDrawing[meDrawing.length - 1].longitudeE7 / 1e7, meDrawing[meDrawing.length - 1].latitudeE7  / 1e7]);
-            meInPos = [meDrawing[meDrawing.length - 1].longitudeE7 / 1e7, meDrawing[meDrawing.length - 1].latitudeE7  / 1e7];
+            mePos = projection([meDrawing[meDrawing.length - 1].longitudeE7, meDrawing[meDrawing.length - 1].latitudeE7 ]);
+            meInPos = [meDrawing[meDrawing.length - 1].longitudeE7, meDrawing[meDrawing.length - 1].latitudeE7 ];
         }
 
 
         if (youDrawing.length > 0) {
-            youPos = projection([youDrawing[youDrawing.length - 1].longitudeE7 / 1e7, youDrawing[youDrawing.length - 1].latitudeE7  / 1e7]);
-            youInPos = [youDrawing[youDrawing.length - 1].longitudeE7 / 1e7, youDrawing[youDrawing.length - 1].latitudeE7  / 1e7];
+            youPos = projection([youDrawing[youDrawing.length - 1].longitudeE7, youDrawing[youDrawing.length - 1].latitudeE7 ]);
+            youInPos = [youDrawing[youDrawing.length - 1].longitudeE7, youDrawing[youDrawing.length - 1].latitudeE7 ];
         }
 
         const thisDots = [{
@@ -414,8 +414,8 @@ function update(){
 
     // function to draw the lines
     line = line
-        .x(d => projection([d.longitudeE7 / 1e7, d.latitudeE7  / 1e7])[0])
-        .y(d => projection([d.longitudeE7 / 1e7, d.latitudeE7  / 1e7])[1]);
+        .x(d => projection([d.longitudeE7, d.latitudeE7 ])[0])
+        .y(d => projection([d.longitudeE7, d.latitudeE7 ])[1]);
     
     d3.select('#plot')
         .selectAll('svg')
