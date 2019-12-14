@@ -9,7 +9,7 @@ let animation = false;
 let width = document.getElementById('plot').clientWidth;
 let height = document.getElementById('plot').clientHeight;
 const scaleScale = d3.scaleLinear().domain([320, 980]).range([180, 600]).clamp(true);
-const scaleHeight = d3.scaleLinear().domain([568, 800]).range([20, 40]).clamp(true);
+const scaleHeight = d3.scaleLinear().domain([568, 667, 800]).range([20, 10, 40]).clamp(true);
 let center = [-30, 50];
 let scale = 150;
 checkScale();

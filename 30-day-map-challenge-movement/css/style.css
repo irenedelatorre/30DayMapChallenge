@@ -155,7 +155,7 @@ p {
 }
 
 .inactive {
-    color: #89624e !important;
+    color: #696969 !important;
     cursor: auto !important;
     text-decoration: none !important;
 }
@@ -223,6 +223,7 @@ footer {
         line-height: 1.2rem;
         padding-bottom: 0.5rem;
         text-align: center !important;
+        width: 100%;
     }
 }
 
