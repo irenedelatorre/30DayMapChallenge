@@ -1,6 +1,6 @@
 body {
     background-color: #dbefff;
-    font-family: adobe-caslon-pro, 'IBM Plex Serif', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     color: #4e6394;
 }
 
@@ -32,14 +32,20 @@ body {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     font-size: 7rem;
     font-weight: 700;
     font-style: normal;
-    /* text-shadow: 0 0 3px #135f9a; */
+    font-family: adobe-caslon-pro, 'IBM Plex Serif', serif;
     color: #4e6394;
     line-height: 0.6em;
     z-index: -1;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
 
 .title {
@@ -49,11 +55,23 @@ h1 {
     margin-left: 30px;
 }
 
-.you {
+@media (max-height: 800px) {
+    .title {
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        margin-left: 0 !important;
+    }
+}
+
+.him {
     color: #F95700;
 }
 
-.i {
+.her {
     color: #00A4CC;
 }
 
@@ -65,9 +83,7 @@ h2 {
 
 p {
     margin-top: 0.5rem;
-    text-align: center;
-    font-size: 1.1rem;
-    font-family: adobe-caslon-pro, serif;
+    font-size: 1rem;
     font-weight: 400;
     font-style: normal;
 }
@@ -85,47 +101,47 @@ p {
     stroke-width: 1;
 }
 
-.line-you, .line-me {
+.line-him, .line-her {
     mix-blend-mode: multiply;
 }
 
 /* button */
 
-#replay {
-    /* color: #4e6394; */
-    font-size: 1.2em;
-    font-weight: normal;
+#replay, #pause, #stop {
+    font-size: 1rem;
+    font-weight: bold;
     touch-action: manipulation;
     cursor: pointer;
-}
-
-.date {
-    margin-bottom: 10px;
-    border-bottom: 0.5px dashed 
-    #747474;
 }
 
 .animationBTN {
     text-align: center;
 }
 
-#pause, #stop {
-    /* color: #222; */
-    font-size: 1.2em;
-    touch-action: manipulation;
-    cursor: pointer;
-}
-
 .choices {
     display: flex;
     display: flex;
-    padding-left: 30px;
-    padding-right: 30p
+    padding-left: 15px;
+    padding-right: 30px;
 }
 
-.choices div {
+@media (max-width: 600px) {
+    .choices {
+        padding-left: 15px;
+        flex-flow: wrap;
+    }
+}
+
+.choices div, .animationBTN a {
     padding-right: 15px;
-    /* padding-left: 15px; */
+}
+
+
+@media (max-width: 600px) {
+    #replayDiv {
+        width: 100%;
+        padding-bottom: 0.1em;
+    }
 }
 
 #replay:hover,
@@ -144,6 +160,37 @@ p {
     text-decoration: none !important;
 }
 
+.time {
+    padding-left: 15px;
+    margin-left: 0;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 600px) {
+    .time {
+        padding-left: 15px;
+    }
+}
+
+#timeFrame {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border-bottom: 0.5px dashed #747474;
+}
+
+@media (max-width: 600px) {
+    #timeFrame {
+        font-size: 0.8rem;
+        border-bottom: 0;
+        font-weight: bold;
+    }
+}
+
+.hide {
+    display: none;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -158,9 +205,31 @@ footer {
     display: flex;
 }
 
+@media (max-width: 600px) {
+    footer {
+        flex-wrap: wrap;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    footer a {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        line-height: 1.2rem;
+        padding-bottom: 0.5rem;
+        text-align: center !important;
+    }
+}
+
 footer a {
     color: white;
     font-weight: bold;
+    padding-left: 15px;
 }
 
 footer a:hover, footer a:focus {
