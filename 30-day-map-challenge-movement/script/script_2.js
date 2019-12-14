@@ -9,7 +9,7 @@ let animation = false;
 let width = document.getElementById('plot').clientWidth;
 let height = document.getElementById('plot').clientHeight;
 const scaleScale = d3.scaleLinear().domain([320, 980]).range([180, 600]).clamp(true);
-const scaleHeight = d3.scaleLinear().domain([568, 667, 800]).range([20, 10, 40]).clamp(true);
+const scaleHeight = d3.scaleLinear().domain([568, 667, 700, 800]).range([20, 10, 30, 40]).clamp(true);
 let center = [-30, 50];
 let scale = 150;
 checkScale();
@@ -117,8 +117,8 @@ window.cancelRequestAnimFrame = ( function() {
 // load data
 Promise.all([
     d3.json('data/world-110m.json'), // from https://bl.ocks.org/mbostock/raw/4090846/world-110m.json
-    d3.json('data/me-location-history.json'),
-    d3.json('data/you-location-history.json'),
+    d3.json('data/her-location-history.json'),
+    d3.json('data/him-location-history.json'),
 ])
   .then(function (files) {
     const startDate = new Date('1 May 2018');
@@ -361,8 +361,6 @@ Promise.all([
     }
 
     function drawAll() {
-
-        console.log(meDays);
         
         plotSummary
             .selectAll('.line-her')
